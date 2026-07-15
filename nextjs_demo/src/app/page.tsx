@@ -1,10 +1,15 @@
-export default async function Home() {
-  const res = await fetch("http://localhost:8000/todo");
-  const todos = await res.json();
+import TodoDashboard from "@/components/TodoDashboard";
 
+export default function Home() {
   return (
-    <main style={{ padding: "2rem" }}>
-      <pre>{JSON.stringify(todos, null, 2)}</pre>
+    <main
+      className="
+        min-h-screen
+        bg-gray-50
+        antialiased
+      "
+    >
+      <TodoDashboard />
     </main>
   );
 }
